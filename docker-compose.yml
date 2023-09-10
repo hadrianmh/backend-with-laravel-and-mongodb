@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  database:
+    build:
+      context: .
+      dockerfile: mongodb/Dockerfile
+    container_name: database
+    image: hadrianmh/backend-with-laravel-and-mongodb_database:1.0.0
+    ports:
+      - 27017:27017
+    volumes:
+      - mongodb-data:/data/db
+
+  server:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    container_name: server
+    image: hadrianmh/backend-with-laravel-and-mongodb_server:1.0.0
+    ports:
+      - 8081:80
+
+volumes:
+  mongodb-data:
