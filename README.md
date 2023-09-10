@@ -1,4 +1,4 @@
-# Frontend with VueJS
+# Backend with Laravel 8, MongoDB, and JWT Auth
 
 ### Registry from Docker Hub
 ```
